@@ -26,17 +26,13 @@ public class Form extends javax.swing.JFrame {
         
         // tambahkan tablemodel ke table
         TableMahasiswa.setModel(model);
+       
         
-//  mata_kuliah 
-//  hari VARCHAR(10) NOT NULL,
-// waktu_mulai TIME
-//  waktu_selesai TIME
-        
-        model.addColumn("mata_kuliah");
-        model.addColumn("nama_dosen");
+        model.addColumn("mata kuliah");
+        model.addColumn("nama dosen");
         model.addColumn("hari");
-        model.addColumn("waktu_mulai");
-        model.addColumn("waktu_selesai");
+        model.addColumn("waktu mulai");
+        model.addColumn("waktu selesai");
         
         loadData();
     }
@@ -92,11 +88,13 @@ public class Form extends javax.swing.JFrame {
         inputMatkul = new javax.swing.JTextField();
         inputDosen = new javax.swing.JTextField();
         inputMulai = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
         inputSelesai = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         exit = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -133,7 +131,6 @@ public class Form extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(TableMahasiswa);
 
-        inputMulai.setText("contoh : 10:00:12");
         inputMulai.setToolTipText("");
         inputMulai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,7 +138,10 @@ public class Form extends javax.swing.JFrame {
             }
         });
 
-        inputSelesai.setText("contoh : 12:30:00");
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(153, 153, 0));
+        jLabel6.setText("contoh 07:00");
+
         inputSelesai.setToolTipText("");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -154,6 +154,7 @@ public class Form extends javax.swing.JFrame {
                     .addComponent(inputMatkul, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inputDosen, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inputMulai, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)
                     .addComponent(inputSelesai, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -166,9 +167,11 @@ public class Form extends javax.swing.JFrame {
                 .addComponent(inputMatkul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(inputDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addGap(13, 13, 13)
                 .addComponent(inputMulai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addGap(11, 11, 11)
                 .addComponent(inputSelesai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -200,6 +203,10 @@ public class Form extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(153, 153, 0));
+        jLabel7.setText("contoh 07:00");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -226,15 +233,20 @@ public class Form extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel1))
                         .addGap(52, 52, 52)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(exit)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                                .addComponent(exit)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(jLabel1)
@@ -242,9 +254,9 @@ public class Form extends javax.swing.JFrame {
                         .addComponent(jLabel2)
                         .addGap(17, 17, 17)
                         .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel5))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
@@ -252,7 +264,9 @@ public class Form extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(45, 45, 45)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7)
+                .addGap(121, 121, 121)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
@@ -271,8 +285,8 @@ public class Form extends javax.swing.JFrame {
         String matkul       = inputMatkul.getText();
         String namadosen    = inputDosen.getText();
         String hari         = inputHari.getText();
-        String waktumulai   = inputMulai.getText();
-        String waktuselesai = inputSelesai.getText();
+        String waktumulai   = inputMulai.getText() + ":00";
+        String waktuselesai = inputSelesai.getText() + ":00";
             
         try {
             Connection c = KoneksiDatabase.getConnection();
@@ -309,8 +323,8 @@ public class Form extends javax.swing.JFrame {
             String matkulUpdated = inputMatkul.getText();
             String namadosen = inputDosen.getText();
             String hari = inputHari.getText();
-            String waktumulai = inputMulai.getText();
-            String waktselesai = inputSelesai.getText();
+            String waktumulai = inputMulai.getText() + ":00";
+            String waktuselesai = inputSelesai.getText() + ":00";
 
             
             Connection c = KoneksiDatabase.getConnection();
@@ -322,7 +336,7 @@ public class Form extends javax.swing.JFrame {
             p.setString(2, hari);
             p.setString(3, namadosen);
             p.setString(4, waktumulai);
-            p.setString(5, waktselesai);
+            p.setString(5, waktuselesai);
             p.setString(6, matkul);
             
             p.executeUpdate();
@@ -441,6 +455,8 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
