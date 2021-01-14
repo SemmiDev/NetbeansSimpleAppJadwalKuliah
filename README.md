@@ -10,5 +10,5 @@
 
 **`run program`**
 ```
-java -jar dist/SimpleAppJadwalKuliah.jar
+java -jar SimpleAppJadwalKuliah.jar
 ```
